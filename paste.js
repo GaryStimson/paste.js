@@ -4,6 +4,8 @@
 paste.js is an interface to read data ( text / image ) from clipboard in different browsers. It also contains several hacks.
 
 https://github.com/layerssss/paste.js
+
+Modified By GS in Fork: https://github.com/GaryStimson/paste.js
  */
 
 (function() {
@@ -356,7 +358,11 @@ https://github.com/layerssss/paste.js
                 file = ref4[l];
                 _this._handleImage(URL.createObjectURL(file), _this.originalEvent);
               }
-              _this._checkImagesInContainer(function(src) {});
+              _this._checkImagesInContainer(function(src) {
+                // MOD GS START
+                _this._handleImage(src, _this.originalEvent);
+                // MOD GS END
+              });
             }
           }
           return null;
